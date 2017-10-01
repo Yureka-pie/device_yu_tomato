@@ -1,10 +1,11 @@
 # Audio
 PRODUCT_PACKAGES += \
+    audiod \
     audio.primary.msm8916 \
     audio.a2dp.default \
     audio.usb.default \
     audio.r_submix.default \
-    libaudio-resampler \
+    libaudio-resampler
 
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
@@ -15,8 +16,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
     android.hardware.audio.effect@2.0-impl \
-    android.hardware.broadcastradio@1.0-impl \
-    android.hardware.soundtrigger@2.0-impl
+    android.hardware.broadcastradio@1.0-impl
+#   android.hardware.soundtrigger@2.0-impl
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf
@@ -30,5 +31,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.min.duration.secs=30 \
     audio.offload.pcm.16bit.enable=false \
     audio.offload.pcm.24bit.enable=true \
-    audio.offload.video=true \
+    audio.offload.video=false \
     use.voice.path.for.pcm.voip=true
