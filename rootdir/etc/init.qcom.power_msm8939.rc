@@ -1,4 +1,4 @@
-on enable-low-power
+on early-init
     start qcom-mem
 
     write /proc/sys/kernel/sched_boost 0

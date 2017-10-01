@@ -1,4 +1,4 @@
-on enable-low-power
+on early-init
     start qcom-mem
 
     # HMP scheduler load tracking settings
