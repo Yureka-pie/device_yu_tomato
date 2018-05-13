@@ -23,9 +23,3 @@ include $(LOCAL_PATH)/product/*.mk
 PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
-
-PRODUCT_PACKAGES += \
-    FM2 \
-    libqcomfm_jni \
-    qcom.fmradio \
-    qcom.fmradio.xml
