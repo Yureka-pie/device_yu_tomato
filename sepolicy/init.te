@@ -1,0 +1,2 @@
+allow init video_device:chr_file { ioctl };
+allow init init:socket { read };
