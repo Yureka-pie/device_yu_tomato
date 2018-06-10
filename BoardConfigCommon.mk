@@ -17,3 +17,9 @@ PLATFORM_PATH := device/cyanogen/msm8916-common
 
 # Include board config fragments
 include $(PLATFORM_PATH)/board/*.mk
+
+include device/qcom/sepolicy/sepolicy.mk
+#include device/qcom/sepolicy/legacy-sepolicy.mk
+
+BOARD_SEPOLICY_DIRS += \
+    $(PLATFORM_PATH)/sepolicy
