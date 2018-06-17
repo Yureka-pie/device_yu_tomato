@@ -7,3 +7,4 @@ allow init tmpfs:lnk_file create;
 allow init vfat:file { read open getattr };
 allow init system_file:file execute_no_trans;
 allow init debugfs:file write;
+allow init cameraserver:fd use;
