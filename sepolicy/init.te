@@ -5,6 +5,6 @@ allow init init:capability2 { block_suspend };
 allow init smd_device:chr_file { read write };
 allow init tmpfs:lnk_file create;
 allow init vfat:file { read open getattr };
-allow init system_file:file execute_no_trans;
+#allow init system_file:file execute_no_trans;
 allow init debugfs:file write;
 allow init cameraserver:fd use;

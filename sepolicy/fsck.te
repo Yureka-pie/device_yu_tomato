@@ -1,2 +1,2 @@
 #dev/block/mmcblk0p31
-allow fsck block_device:blk_file { read write open ioctl };
+#allow fsck block_device:blk_file { read write open ioctl };

@@ -1,1 +1,1 @@
-allow untrusted_app proc:file { open read getattr };
+#allow untrusted_app proc:file { open read getattr };
