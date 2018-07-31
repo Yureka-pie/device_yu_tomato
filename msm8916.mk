@@ -215,3 +215,37 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/WCNSS_qcom_cfg.ini:system/vendor/etc/wifi/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/configs/WCNSS_qcom_cfg.ini:system/vendor/firmware/wlan/prima/WCNSS_qcom_cfg.ini
 
+# Nubia charger
+PRODUCT_PACKAGES += \
+    poweroffcharge
+
+# Nubia charger images
+PRODUCT_COPY_FILES += \
+$(LOCAL_PATH)/charger/images/POWER1.png:$(TARGET_OUT_DIR)/root/res/images/POWER1.png \
+$(LOCAL_PATH)/charger/images/POWER10.png:$(TARGET_OUT_DIR)/root/res/images/POWER10.png \
+$(LOCAL_PATH)/charger/images/POWER2.png:$(TARGET_OUT_DIR)/root/res/images/POWER2.png \
+$(LOCAL_PATH)/charger/images/POWER3.png:$(TARGET_OUT_DIR)/root/res/images/POWER3.png \
+$(LOCAL_PATH)/charger/images/POWER4.png:$(TARGET_OUT_DIR)/root/res/images/POWER4.png \
+$(LOCAL_PATH)/charger/images/POWER5.png:$(TARGET_OUT_DIR)/root/res/images/POWER5.png \
+$(LOCAL_PATH)/charger/images/POWER6.png:$(TARGET_OUT_DIR)/root/res/images/POWER6.png \
+$(LOCAL_PATH)/charger/images/POWER7.png:$(TARGET_OUT_DIR)/root/res/images/POWER7.png \
+$(LOCAL_PATH)/charger/images/POWER8.png:$(TARGET_OUT_DIR)/root/res/images/POWER8.png \
+$(LOCAL_PATH)/charger/images/POWER9.png:$(TARGET_OUT_DIR)/root/res/images/POWER9.png \
+$(LOCAL_PATH)/charger/images/background.png:$(TARGET_OUT_DIR)/root/res/images/background.png \
+$(LOCAL_PATH)/charger/images/chargeLogo.png:$(TARGET_OUT_DIR)/root/res/images/chargeLogo.png \
+$(LOCAL_PATH)/charger/images/error.png:$(TARGET_OUT_DIR)/root/res/images/error.png \
+$(LOCAL_PATH)/charger/images/full.png:$(TARGET_OUT_DIR)/root/res/images/full.png \
+$(LOCAL_PATH)/charger/images/green_0.png:$(TARGET_OUT_DIR)/root/res/images/green_0.png \
+$(LOCAL_PATH)/charger/images/green_1.png:$(TARGET_OUT_DIR)/root/res/images/green_1.png \
+$(LOCAL_PATH)/charger/images/percentage.png:$(TARGET_OUT_DIR)/root/res/images/percentage.png \
+$(LOCAL_PATH)/charger/images/percentage_full.png:$(TARGET_OUT_DIR)/root/res/images/percentage_full.png \
+$(LOCAL_PATH)/charger/images/red_0.png:$(TARGET_OUT_DIR)/root/res/images/red_0.png \
+$(LOCAL_PATH)/charger/images/red_1.png:$(TARGET_OUT_DIR)/root/res/images/red_1.png \
+$(LOCAL_PATH)/charger/images/red_2.png:$(TARGET_OUT_DIR)/root/res/images/red_2.png \
+$(LOCAL_PATH)/charger/images/red_3.png:$(TARGET_OUT_DIR)/root/res/images/red_3.png \
+$(LOCAL_PATH)/charger/images/red_4.png:$(TARGET_OUT_DIR)/root/res/images/red_4.png \
+$(LOCAL_PATH)/charger/images/red_5.png:$(TARGET_OUT_DIR)/root/res/images/red_5.png \
+$(LOCAL_PATH)/charger/images/red_6.png:$(TARGET_OUT_DIR)/root/res/images/red_6.png \
+$(LOCAL_PATH)/charger/images/red_7.png:$(TARGET_OUT_DIR)/root/res/images/red_7.png \
+$(LOCAL_PATH)/charger/images/red_8.png:$(TARGET_OUT_DIR)/root/res/images/red_8.png \
+$(LOCAL_PATH)/charger/images/red_9.png:$(TARGET_OUT_DIR)/root/res/images/red_9.png
