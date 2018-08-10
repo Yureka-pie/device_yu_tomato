@@ -38,6 +38,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <CalibrationModule.h>
 #include "sensors.h"
 #include "CalibrationManager.h"
+#include "string.h"
 
 ANDROID_SINGLETON_STATIC_INSTANCE(CalibrationManager);
 
