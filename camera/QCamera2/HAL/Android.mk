@@ -55,9 +55,9 @@ LOCAL_C_INCLUDES := \
         ../../../nativebase/include/ \
         frameworks/native/libs/nativewindow/include/ \
         frameworks/native/include/media/openmax \
-        $(call project-path-for,qcom-display)/libgralloc \
-        $(call project-path-for,qcom-display)/libqdutils \
-        $(call project-path-for,qcom-media)/libstagefrighthw \
+        hardware/qcom/display/libgralloc \
+        hardware/qcom/display/libqdutils \
+        hardware/qcom/media/libstagefrighthw \
         system/media/camera/include \
         $(LOCAL_PATH)/../../mm-image-codec/qexif \
         $(LOCAL_PATH)/../../mm-image-codec/qomx_core \
@@ -73,7 +73,7 @@ endif
 LOCAL_C_INCLUDES += \
         $(TARGET_OUT_HEADERS)/qcom/display
 LOCAL_C_INCLUDES += \
-        $(call project-path-for,qcom-display)/libqservice
+        hardware/qcom/display/libqservice
 
 #ifeq ($(TARGET_USE_VENDOR_CAMERA_EXT),true)
 #LOCAL_C_INCLUDES += $(call project-path-for,qcom-display)/libgralloc
