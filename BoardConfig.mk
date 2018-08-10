@@ -25,9 +25,6 @@ include vendor/yu/tomato/BoardConfigVendor.mk
 ALLOW_MISSING_DEPENDENCIES =true
 WITH_DEXPREOPT := true
 
-#Selinux
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
-
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
