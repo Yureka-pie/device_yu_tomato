@@ -22,6 +22,8 @@
 #include <pthread.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <string.h>
+#include <errno.h>
 
 static int __rtio_cgroup_supported = -1;
 static pthread_once_t __rtio_init_once = PTHREAD_ONCE_INIT;
