@@ -58,6 +58,8 @@ LOCAL_C_INCLUDES := \
         hardware/qcom/display/libgralloc \
         hardware/qcom/display/libqdutils \
         hardware/qcom/media/libstagefrighthw \
+        hardware/qcom/media-caf/msm8916/libstagefrighthw \
+        hardware/qcom/display-caf/msm8916/libqservice \
         system/media/camera/include \
         $(LOCAL_PATH)/../../mm-image-codec/qexif \
         $(LOCAL_PATH)/../../mm-image-codec/qomx_core \
