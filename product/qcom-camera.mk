@@ -1,10 +1,10 @@
 # Camera
-PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl \
-    camera.device@3.2-impl \
+#PRODUCT_PACKAGES += \
+ #   android.hardware.camera.provider@2.4-impl \
+  #  camera.device@3.2-impl \
     camera.msm8916 \
     libmm-qcamera \
-    SnapdragonCamera
+     Camera2
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -14,5 +14,4 @@ PRODUCT_COPY_FILES += \
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.cpp.duplication=false \
-    persist.camera.hal.debug.mask=0 \
-    persist.camera.HAL3.enabled=1
+    persist.camera.hal.debug.mask=0
