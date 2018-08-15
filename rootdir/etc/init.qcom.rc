@@ -75,6 +75,9 @@ on late-fs
 
      mount_all fstab.qcom --late
 
+    # Allow writing to the kernel trace log.
+    chmod 0222 /sys/kernel/debug/tracing/trace_marker
+
 # msm specific files that need to be created on /data
 on post-fs-data
 
