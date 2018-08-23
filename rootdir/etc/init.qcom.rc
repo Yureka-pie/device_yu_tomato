@@ -99,6 +99,7 @@ on post-fs-data
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
 
+
     # Create the directories used by CnE subsystem
     mkdir /data/connectivity 0771 system system
     mkdir /data/connectivity/nsrm 0771 system system
@@ -358,12 +359,13 @@ service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqb
 
 service netmgrd /system/bin/netmgrd
     class main
-    group system wakelock
+    user root
+    group root wifi wakelock radio inet oem_2950
     writepid /dev/cpuset/system-background/tasks
 
-on property:ro.use_data_netmgrd=false
+#on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
-    stop netmgrd
+ #   stop netmgrd
 
 # Adjust socket buffer to enlarge TCP receive window for high bandwidth
 # but only if ro.data.large_tcp_window_size property is set.
