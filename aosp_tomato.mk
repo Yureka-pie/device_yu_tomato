@@ -1,4 +1,5 @@
 # Copyright (C) 2014 The CyanogenMod Project
+# Copyright (C) 2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,14 +24,14 @@ PRODUCT_NAME := aosp_tomato
 BOARD_VENDOR := yu
 PRODUCT_DEVICE := tomato
 
-PRODUCT_GMS_CLIENTID_BASE := android-micromax
-
 TARGET_VENDOR_PRODUCT_NAME := YUREKA
 TARGET_VENDOR_DEVICE_NAME := YUREKA
-PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=YUREKA PRODUCT_NAME=YUREKA
 
-## Use the latest approved GMS identifiers unless running a signed build
+PRODUCT_GMS_CLIENTID_BASE := android-micromax
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="YUREKA-user 5.1.1 LMY49J YOG4PAS8A4 release-keys"
+    PRIVATE_BUILD_DESC="YUREKA-user 5.1.1 LMY49J YOG4PAS8A4 release-keys" \
+    PRODUCT_NAME=YUREKA \
+    TARGET_DEVICE=YUREKA
 
 BUILD_FINGERPRINT := YU/YUREKA/YUREKA:5.1.1/LMY49J/YOG4PAS8A4:user/release-keys

@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,18 +13,75 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
+# Inherit from msm8916-common
 include device/cyanogen/msm8916-common/BoardConfigCommon.mk
 
-include device/yu/tomato/board/*.mk
+DEVICE_PATH := device/yu/tomato
 
 # Assertions
-TARGET_BOARD_INFO_FILE := device/yu/tomato/board-info.txt
+TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
+
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
+
+# Camera
+BOARD_CAMERA_SENSORS := imx135_cp8675 imx214_cp8675 ov5648_cp8675
+USE_DEVICE_SPECIFIC_CAMERA := true
+
+# Filesystem
+BOARD_FLASH_BLOCK_SIZE := 131072
+BOARD_BOOTIMAGE_PARTITION_SIZE := 20971520
+BOARD_CACHEIMAGE_PARTITION_SIZE := 134217728
+BOARD_PERSISTIMAGE_PARTITION_SIZE := 10485760
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 20971520
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2684354560
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 13576175616 # 13576192000 - 16384
+# Use mke2fs instead of make_ext4fs
+TARGET_USES_MKE2FS := true
+
+# GPS
+TARGET_NO_RPC := true
+USE_DEVICE_SPECIFIC_GPS := true
+
+# Init
+TARGET_LIBINIT_MSM8916_DEFINES_FILE := $(DEVICE_PATH)/init/init_tomato.cpp
+
+# Kernel
+BOARD_DTBTOOL_ARGS := -2
+BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_KERNEL_SEPARATED_DT := true
+LZMA_RAMDISK_TARGETS := recovery
+TARGET_KERNEL_CONFIG := lineageos_tomato_defconfig
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
+#KERNEL_TOOLCHAIN := /home/sanchit/linaro7/bin
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu
+
+# Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
+# Recovery
+TARGET_RECOVERY_DENSITY := xhdpi
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
+
+# TWRP
+ifeq ($(WITH_TWRP),true)
+include $(DEVICE_PATH)/twrp.mk
+endif
+
+# Widevine
+BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 3
+
+# Wi-Fi
+TARGET_PROVIDES_WCNSS_QMI := true
+#WIFI_DRIVER_MODULE_NAME := "wlan"
+#WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
 
 # Inherit from proprietary files
 include vendor/yu/tomato/BoardConfigVendor.mk
-#ALLOW_MISSING_DEPENDENCIES =true
-WITH_DEXPREOPT := false
 
 QCOM_HARDWARE_VARIANT := msm8916
 TARGET_COMPILE_WITH_MSM_KERNEL := true
@@ -35,8 +93,9 @@ TARGET_LD_SHIM_LIBS += \
     /system/vendor/lib64/lib-imscamera.so|libshims_camera.so \
     /system/vendor/lib64/lib-imsvt.so|libshims_ims.so \
 
-TARGET_QCOM_WLAN_VARIANT := wlan-caf
-
 #Telephony
 PRODUCT_PACKAGES += qti-telephony-common
 PRODUCT_BOOT_JARS += telephony-ext
+
+#Power
+TARGET_PROVIDES_POWERHAL := true
