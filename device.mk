@@ -58,6 +58,9 @@ PRODUCT_PACKAGES += \
     SnapdragonCamera \
     FootejCamera
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/external_camera_config.xml:system/vendor/etc/external_camera_config.xml
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
