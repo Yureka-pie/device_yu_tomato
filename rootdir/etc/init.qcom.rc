@@ -59,9 +59,21 @@ service qseecomd /system/bin/qseecomd
 on fs
     wait /dev/block/platform/soc.0/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc.0/${ro.boot.bootdevice} /dev/block/bootdevice
-    mount_all fstab.qcom
+    mount_all fstab.qcom  --early
     mkdir /persist/data 0700 system system
     restorecon_recursive /persist
+
+   # Start HW service manager early
+     start hwservicemanager
+
+on late-fs
+     # Start services for bootanim
+     start surfaceflinger
+     start bootanim
+     start configstore-hal-1-0
+     start gralloc-2-0
+
+     mount_all fstab.qcom --late
 
 # msm specific files that need to be created on /data
 on post-fs-data
