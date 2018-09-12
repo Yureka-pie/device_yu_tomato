@@ -143,6 +143,10 @@
         <item>"/system/framework/boot-core-libart.vdex"</item>
    </string-array>
 
-          <bool name="config_swipe_up_gesture_setting_available">true</bool>
+         <bool name="config_swipe_up_gesture_setting_available">true</bool>
+
+         <!--Button backlight -->
+         <bool name="config_button_brightness_support">true</bool>
+         <integer name="config_button_brightness_default">128</integer>
 
 </resources>
