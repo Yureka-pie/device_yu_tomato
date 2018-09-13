@@ -100,3 +100,5 @@ BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 3
 
 # Inherit from proprietary files
 include vendor/yu/tomato/BoardConfigVendor.mk
+
+WITH_DEXPREOPT := true
