@@ -15,7 +15,11 @@
 
 include device/cyanogen/msm8916-common/BoardConfigCommon.mk
 
-#Audio
+#Platform
+BOARD_USES_ADRENO := true
+QCOM_HARDWARE_VARIANT := msm8916
+TARGET_USES_QCOM_BSP := true
+TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_USES_QCOM_MM_AUDIO := true
 
 # Assertions
@@ -70,8 +74,6 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 KERNEL_TOOLCHAIN := /home/sanchit/linaro7/bin
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
-QCOM_HARDWARE_VARIANT := msm8916
-TARGET_COMPILE_WITH_MSM_KERNEL := true
 
 # Lights
 BOARD_LIGHTS_VARIANT := aw2013
@@ -101,7 +103,18 @@ BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 3
 # Inherit from proprietary files
 include vendor/yu/tomato/BoardConfigVendor.mk
 
-WITH_DEXPREOPT := true
+# Dex optimizion
+ifeq ($(HOST_OS),linux)
+ ifneq ($(TARGET_BUILD_VARIANT),eng)
+   WITH_DEXPREOPT := true
+   WITH_DEXPREOPT_DEBUG_INFO := false
+   USE_DEX2OAT_DEBUG := false
+   USE_DEX2OAT_DEBUG := false
+   DONT_DEXPREOPT_PREBUILTS := true
+   WITH_DEXPREOPT_PIC := true
+   WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+ endif
+endif
 
 #SystemServer: Bootimg dex
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
