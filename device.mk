@@ -115,7 +115,7 @@ PRODUCT_PACKAGES += \
 #Apps
 PRODUCT_PACKAGES +=\
 MiXplorer \
-Markup
+ButtonRemapper
 
 PRODUCT_PACKAGES += \
 android.hardware.graphics.composer@2.1-impl
