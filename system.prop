@@ -40,14 +40,18 @@ ro.bluetooth.sap=true
 ro.qualcomm.bt.hci_transport=smd
 
 #Display
+debug.hwui.use_buffer_age=false
 debug.composition.type=c2d
 debug.mdpcomp.idletime=600
 persist.hwc.mdpcomp.enable=true
 persist.hwc.ptor.enable=true
 debug.enable.sglscale=1
+ro.opengles.version=196608
 
 #Radio
 persist.data.qmi.adb_logmask=0
+persist.radio.add_power_save=1
 persist.radio.apm_sim_not_pwdn=1
+persist.vendor.radio.apm_sim_not_pwdn=1
 ro.telephony.call_ring.multiple=false
 ro.use_data_netmgrd=true
