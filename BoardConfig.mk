@@ -103,6 +103,12 @@ BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 3
 # Inherit from proprietary files
 include vendor/yu/tomato/BoardConfigVendor.mk
 
+#Hals
+TARGET_QCOM_AUDIO_VARIANT := caf-msm8916
+TARGET_QCOM_BLUETOOTH_VARIANT := caf
+TARGET_QCOM_DISPLAY_VARIANT := caf-msm8916
+TARGET_QCOM_MEDIA_VARIANT := caf-msm8916
+
 # Dex optimizion
 ifeq ($(HOST_OS),linux)
  ifneq ($(TARGET_BUILD_VARIANT),eng)
