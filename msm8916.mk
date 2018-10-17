@@ -99,34 +99,15 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/vendor/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/vendor/etc/permissions/android.hardware.usb.accessory.xml
 
-#Perf
-ifeq ($(TARGET_BOARD_PLATFORM_VARIANT),msm8939)
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.fw.dex2oat_thread_count=4
-endif
-
 # IRQ balance
-ifeq ($(TARGET_BOARD_PLATFORM_VARIANT),msm8939)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
-endif
 
 # Power HAL
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
     android.hardware.power@1.0-service \
     power.msm8916
-
-ifeq ($(TARGET_BOARD_PLATFORM_VARIANT),msm8916)
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.min_freq_0=200000
-else
-ifeq ($(TARGET_BOARD_PLATFORM_VARIANT),msm8939)
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.min_freq_0=200000 \
-    ro.min_freq_4=200000
-endif
-endif
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -155,16 +136,6 @@ PRODUCT_PACKAGES += \
 ifeq ($(TARGET_BOARD_PLATFORM_VARIANT),msm8939)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:system/vendor/etc/permissions/android.hardware.opengles.aep.xml
-endif
-
-ifeq ($(TARGET_BOARD_PLATFORM_VARIANT),msm8916)
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196608
-else
-ifeq ($(TARGET_BOARD_PLATFORM_VARIANT),msm8939)
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196610
-endif
 endif
 
 # RenderScript HAL
