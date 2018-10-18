@@ -196,3 +196,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/camsounds/camera_focus.ogg:system/product/media/audio/ui \
     $(LOCAL_PATH)/camsounds/VideoStop.ogg:system/product/media/audio/ui \
     $(LOCAL_PATH)/camsounds/VideoRecord.ogg:system/product/media/audio/ui
+
+# TextClassifier smart selection model
+PRODUCT_PACKAGES += \
+    textclassifier.bundle1
