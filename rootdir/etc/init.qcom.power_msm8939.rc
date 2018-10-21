@@ -59,8 +59,8 @@ on boot
     # Enable core control
     write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 0
     write /sys/devices/system/cpu/cpu0/core_ctl/max_cpus 4
-    write /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres 92
-    write /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres 77
+    write /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres 77
+    write /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres 90
     write /sys/devices/system/cpu/cpu0/core_ctl/offline_delay_ms "400 400 100 100"
     write /sys/devices/system/cpu/cpu0/core_ctl/online_delay_ms "1000 5000 6000 6000"
     write /sys/devices/system/cpu/cpu0/core_ctl/task_thres 4
