@@ -3,42 +3,38 @@ ro.vendor.audio.sdk.fluencetype=fluence
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicerec=false
 persist.vendor.audio.fluence.speaker=false
+af.fast_track_multiplier=1
+audio.deep_buffer.media=true 
+audio.offload.min.duration.secs=30
+audio.offload.video=true 
+vendor.audio.av.streaming.offload.enable=true 
+vendor.audio.offload.buffer.size.kb=64 
+vendor.audio.offload.gapless.enabled=true 
+vendor.audio_hal.period_size=192
+vendor.voice.path.for.pcm.voip=true
+
+#Bluetooth
+qcom.bluetooth.soc=smd
+ro.bluetooth.dun=true
+ro.bluetooth.hfp.ver=1.7
+ro.bluetooth.sap=true
+ro.qualcomm.bt.hci_transport=smd
 
 #Camera
 persist.camera.cpp.duplication=false
 persist.camera.hal.debug.mask=0
 
-#Ril
-DEVICE_PROVISIONED=1
-persist.data.target=dpm1
-persist.radio.multisim.config=dsds
-persist.radio.no_cons_man_roam=1
-ro.config.always_show_roaming=true
-rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
-rild.libargs=-d /dev/smd0
-ril.ecclist=000,08,100,101,102,110,112,118,119,120,122,911,999
-ril.ecclist1=000,08,100,101,102,110,112,118,119,120,122,911,999
-ro.telephony.default_network=9,9
-vendor.rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
-vendor.rild.libargs=-d /dev/smd0
-
-#Usb
-ro.usb.id.midi=90BA
-ro.usb.id.midi_adb=90BB
-ro.usb.id.mtp=F003
-ro.usb.id.mtp_adb=9039
-ro.usb.id.ptp=904D
-ro.usb.id.ptp_adb=904E
-ro.usb.id.ums=F000
-ro.usb.id.ums_adb=9015
-ro.usb.vid=05c6
+#Display
+debug.hwui.use_buffer_age=false
+debug.composition.type=c2d
+debug.mdpcomp.idletime=600
+persist.hwc.mdpcomp.enable=true
+persist.hwc.ptor.enable=true
+debug.enable.sglscale=1
+ro.opengles.version=196610
 
 #DeepSleep
 pm.sleep_mode=1
-
-# Fling velocities
-ro.min.fling_velocity=160
-ro.max.fling_velocity=20000
 
 # Dalvik
 dalvik.vm.checkjni=false
@@ -53,11 +49,9 @@ dalvik.vm.dex2oat-threads=4
 dalvik.vm.image-dex2oat-threads=4
 ro.sys.fw.dex2oat_thread_count=4
 
-# Play store
-ro.com.google.clientidbase.am=android-micromax
-ro.com.google.clientidbase.gmm=android-micromax
-ro.com.google.clientidbase.ms=android-micromax
-ro.com.google.clientidbase.yt=android-micromax
+# Fling velocities
+ro.min.fling_velocity=160
+ro.max.fling_velocity=20000
 
 # Google DNS
 net.dns1=1.1.1.1
@@ -80,3 +74,60 @@ dhcp.wlan0.dns2=1.0.0.1
 # Healthd
 ro.enable_boot_charger_mode=1
 
+#Media
+drm.service.enabled=1
+vidc.enc.narrow.searchrange=1
+
+# Play store
+ro.com.google.clientidbase.am=android-micromax
+ro.com.google.clientidbase.gmm=android-micromax
+ro.com.google.clientidbase.ms=android-micromax
+ro.com.google.clientidbase.yt=android-micromax
+
+#Perf
+ro.am.reschedule_service=true
+ro.config.max_starting_bg=8
+
+#Power
+ro.vendor.extension_library=libqti-perfd-client.so
+ro.core_ctl_min_cpu=0
+ro.core_ctl_max_cpu=4
+ro.min_freq_0=200000
+ro.min_freq_4=200000
+
+#Ril
+DEVICE_PROVISIONED=1
+persist.data.target=dpm1
+persist.radio.multisim.config=dsds
+persist.radio.no_cons_man_roam=1
+ro.config.always_show_roaming=true
+rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
+rild.libargs=-d /dev/smd0
+ril.ecclist=000,08,100,101,102,110,112,118,119,120,122,911,999
+ril.ecclist1=000,08,100,101,102,110,112,118,119,120,122,911,999
+ro.telephony.default_network=9,9
+vendor.rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
+vendor.rild.libargs=-d /dev/smd0
+persist.data.qmi.adb_logmask=0
+persist.radio.add_power_save=1
+persist.radio.apm_sim_not_pwdn=1
+persist.vendor.radio.apm_sim_not_pwdn=1
+ro.telephony.call_ring.multiple=false
+ro.use_data_netmgrd=true
+
+#Usb
+ro.usb.id.midi=90BA
+ro.usb.id.midi_adb=90BB
+ro.usb.id.mtp=F003
+ro.usb.id.mtp_adb=9039
+ro.usb.id.ptp=904D
+ro.usb.id.ptp_adb=904E
+ro.usb.id.ums=F000
+ro.usb.id.ums_adb=9015
+ro.usb.vid=05c6
+
+# WiFi
+wifi.interface=wlan0
+persist.debug.wfd.enable=1
+persist.sys.wfd.virtual=0
+ro.disableWifiApFirmwareReload=true
